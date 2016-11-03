@@ -1,3 +1,26 @@
+<header></header>
 <main>
-<h1>CREATE ROUTE PAGE</h1>
+
+    <div class="create-route-container">
+        <form name="createRouteForm">
+          <h3>Create New Route</h3>
+            <fieldset name="locationA" ng-repeat="index in create.fieldsets">
+                <legend for="locationA">Add Location</legend>
+                <label for="name">Name</label>
+                <input name="name" type="text" placeholder="Location Name">
+                <label for="address">Address</label>
+                <input name="address" type="text" placeholder="Address">
+                <label for="city">City</label>
+                <input name="city" type="text" placeholder="City">
+                <label for="state">State</label>
+                <select name="state">
+                    <option ng-repeat="state in create.states">{{state.abbreviation}}</option>
+                </select>
+                <label for="zip">Zip</label>
+                <input name="zip" type="text" placeholder="Zipcode">
+            </fieldset>
+            <button id="createRouteBtn" type="submit">Create Route</button>
+        </form>
+        <button id="addLocBtn" ng-click="create.addFieldset()">Add Another Location</button>
+    </div>
 </main>

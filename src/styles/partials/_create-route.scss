@@ -1,0 +1,67 @@
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+.create-route-container {
+
+  width: 80%;
+
+
+form {
+
+  width: 100%;
+  padding: $small-spacing;
+  margin: $small-spacing 0;
+  box-shadow: 1px 1px 5px $medium-gray;
+
+  fieldset {
+    border: $base-border;
+    padding: $small-spacing / 2;
+    margin-bottom: $base-spacing;
+  }
+
+  label, input, select {
+    display: inline-block;
+  }
+
+  label {
+    display: none;
+  }
+
+  label[for=state] {
+    display: inline-block;
+  }
+
+    input, select {
+      margin-right: 0.5em;
+    }
+
+    input[name=name] {
+      width: 12em;
+    }
+
+    input[name=address] {
+      width: 16em;
+    }
+
+    input[name=city] {
+      width: 10em;
+    }
+
+    input[name=zip] {
+      width: 5em;
+    }
+
+    select {
+      width: 3em;
+    }
+
+}
+
+
+}
