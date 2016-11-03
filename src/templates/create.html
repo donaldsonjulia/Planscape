@@ -2,25 +2,36 @@
 <main>
 
     <div class="create-route-container">
-        <form name="createRouteForm">
-          <h3>Create New Route</h3>
-            <fieldset name="locationA" ng-repeat="index in create.fieldsets">
-                <legend for="locationA">Add Location</legend>
-                <label for="name">Name</label>
-                <input name="name" type="text" placeholder="Location Name">
-                <label for="address">Address</label>
-                <input name="address" type="text" placeholder="Address">
-                <label for="city">City</label>
-                <input name="city" type="text" placeholder="City">
-                <label for="state">State</label>
-                <select name="state">
-                    <option ng-repeat="state in create.states">{{state.abbreviation}}</option>
-                </select>
-                <label for="zip">Zip</label>
-                <input name="zip" type="text" placeholder="Zipcode">
-            </fieldset>
-            <button id="createRouteBtn" type="submit">Create Route</button>
+        <form name="addLocationForm" novalidate ng-submit="create.addLocation(location)">
+          <h3>Add Location</h3>
+          <input name="name" type="text" placeholder="Location Name" ng-model="location.name" required>
+          <input name="address" type="text" placeholder="Address" ng-model="location.street" required>
+          <input name="city" type="text" placeholder="City" ng-model="location.city" required>
+          <label for="state">State</label>
+          <select name="state" ng-model="location.state" required>
+              <option disabled="true" selected="true">--</option>
+              <option ng-repeat="state in create.states">{{state.abbreviation}}</option>
+          </select>
+          <input name="zip" type="text" placeholder="Zip" pattern="\d{5}-?(\d{4})?" ng-model="location.zip" required>
+          <button id="addLocationBtn" type="submit">Add Location</button>
         </form>
-        <button id="addLocBtn" ng-click="create.addFieldset()">Add Another Location</button>
+
+        <table ng-repeat="location in create.route">
+          <thead>
+            <th>{{location.name}}</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{location.street}}</td>
+              <td>{{location.city}}</td>
+              <td>{{location.state}}</td>
+              <td>{{location.zip}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+
     </div>
+
+
 </main>

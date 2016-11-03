@@ -14,14 +14,27 @@ angular.module('planscape').controller('CreateRouteController', function($state,
 
 this.states = CreateRouteService.states;
 
-this.fieldsets = [1,2];
 
-this.addFieldset = function() {
-  var newLoc = Math.random();
-  var currentFieldsets = this.fieldsets;
-  if (currentFieldsets.length < 4) {
-    this.fieldsets.push(newLoc);
-  }
+this.route = [];
+
+this.location = {};
+
+this.addLocation = function(location) {
+    console.log(location);
+    this.location = angular.copy(location);
+    this.route.push(this.location);
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 });

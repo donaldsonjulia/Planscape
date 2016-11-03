@@ -11,13 +11,14 @@ main {
 
   width: 80%;
 
-
 form {
 
   width: 100%;
+  position: relative;
   padding: $small-spacing;
   margin: $small-spacing 0;
   box-shadow: 1px 1px 5px $medium-gray;
+
 
   fieldset {
     border: $base-border;
@@ -26,14 +27,6 @@ form {
   }
 
   label, input, select {
-    display: inline-block;
-  }
-
-  label {
-    display: none;
-  }
-
-  label[for=state] {
     display: inline-block;
   }
 
@@ -57,11 +50,12 @@ form {
       width: 5em;
     }
 
-    select {
+    select[name=state] {
       width: 3em;
     }
 
 }
+
 
 
 }
