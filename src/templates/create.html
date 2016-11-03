@@ -4,8 +4,9 @@
     <div class="create-route-container">
         <form name="createRouteForm">
           <h3>Create New Route</h3>
-            <fieldset name="locationA" ng-repeat="index in create.fieldsets">
-                <legend for="locationA">Add Location</legend>
+          <button id="addLocBtn" ng-click="create.addFieldset()">Add Another Location</button>
+            <fieldset name="location" ng-repeat="index in create.fieldsets">
+                <legend for="location">Add Location</legend>
                 <label for="name">Name</label>
                 <input name="name" type="text" placeholder="Location Name">
                 <label for="address">Address</label>
@@ -21,6 +22,6 @@
             </fieldset>
             <button id="createRouteBtn" type="submit">Create Route</button>
         </form>
-        <button id="addLocBtn" ng-click="create.addFieldset()">Add Another Location</button>
+
     </div>
 </main>

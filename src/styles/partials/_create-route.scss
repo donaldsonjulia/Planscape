@@ -16,6 +16,7 @@ form {
 
   width: 100%;
   padding: $small-spacing;
+  position: relative;
   margin: $small-spacing 0;
   box-shadow: 1px 1px 5px $medium-gray;
 
@@ -61,6 +62,12 @@ form {
       width: 3em;
     }
 
+}
+
+#addLocBtn {
+  position: absolute;
+  top: $small-spacing;
+  right: $small-spacing;
 }
 
 
