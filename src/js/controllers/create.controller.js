@@ -4,24 +4,36 @@ angular.module('planscape').controller('CreateRouteController', function($state,
   $http({
     method: 'GET',
     url: 'https://shielded-atoll-99970.herokuapp.com/'
-  }).then(function successCallback(response) {
-    console.log(response);
-    }, function errorCallback(response) {
-    console.log(response);
+  }).then(function successCallback(data) {
+    console.log(data);
+  }, function errorCallback(data) {
+    console.log(data);
     });
 
 //* ******************START CONTROLLER HERE******************************* */
 
 this.states = CreateRouteService.states;
 
-this.fieldsets = [1,2];
+this.routes = [];
+
+this.formFieldsets = [{location: {}},{location:{}}];
 
 this.addFieldset = function() {
-  var newLoc = Math.random();
+  var newFieldset = {location: {}};
   var currentFieldsets = this.fieldsets;
   if (currentFieldsets.length < 4) {
-    this.fieldsets.push(newLoc);
+    this.formFieldsets.push(newFieldset);
   }
 };
+
+this.generate = function() {
+  console.log(this.formFieldsets);
+  $state.go('main.route');
+};
+
+
+
+
+
 
 });

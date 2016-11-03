@@ -14,6 +14,10 @@ angular.module('planscape', ['ui.router', 'LocalStorageModule']).config(function
     url: 'create',
     templateUrl: './src/templates/create.html',
     controller: 'CreateRouteController as create'
+  }).state('main.route', {
+    url: 'route',
+    templateUrl: './src/templates/route.html',
+    controller: 'CreateRouteController as create'
   }).state('main.view', {
     url: 'view',
     templateUrl: './src/templates/view.html',
