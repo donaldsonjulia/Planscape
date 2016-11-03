@@ -12,9 +12,9 @@ angular.module('planscape').controller('CreateRouteController', function($state,
 
 //* ******************START CONTROLLER HERE******************************* */
 
-this.states = CreateRouteService.states;
 
-this.routes = CreateRouteService.get();
+
+this.states = CreateRouteService.states;
 
 this.formFieldsets = [ {route:null}, {route:null} ];
 
@@ -26,6 +26,11 @@ this.addFieldset = function() {
   }
 };
 
+
+
+
+this.routes = CreateRouteService.get();
+
 this.createRoute = function() {
   var locationsArray = this.formFieldsets;
   var routeID = Date.now();
@@ -34,7 +39,6 @@ this.createRoute = function() {
     location.route = routeID;
     newRoute.push(location);
   });
-  console.log(newRoute);
   this.routes.push(newRoute);
   CreateRouteService.set(this.routes);
   $state.go('main.route');
