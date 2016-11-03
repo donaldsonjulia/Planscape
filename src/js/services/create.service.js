@@ -1,4 +1,4 @@
-angular.module('planscape').service('CreateRouteService', function(){
+angular.module('planscape').service('CreateRouteService', function(localStorageService){
 
   var usStates = [
       { name: 'ALABAMA', abbreviation: 'AL'},
@@ -55,13 +55,21 @@ angular.module('planscape').service('CreateRouteService', function(){
       { name: 'WYOMING', abbreviation: 'WY' }
   ];
 
+  function getRoutes() {
+    return localStorageService.get('Routes') || [];
+  }
 
+  function setRoutes(routes) {
+    localStorageService.set('Routes', routes);
+  }
 
 
 
 
 return {
-  states: usStates
+  states: usStates,
+  get: getRoutes,
+  set: setRoutes
 };
 
 

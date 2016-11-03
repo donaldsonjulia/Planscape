@@ -1,3 +1,9 @@
 <main>
   <h3 ui-sref="main.create">YAY! now go back to the create form</h3>
+<table>
+  <tr ng-repeat="route in create.routes">
+  <td>Route ID: {{route.id}}</td>
+  <td>Locations: {{route.length}}</td>
+</tr>
+</table>
 </main>

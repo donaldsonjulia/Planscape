@@ -1,4 +1,4 @@
-angular.module('planscape').controller('CreateRouteController', function($state, $http, CreateRouteService) {
+angular.module('planscape').controller('CreateRouteController', function($state, $http, CreateRouteService, localStorageService) {
 
 //* BELOW AJAX TEST FOR CONNECTING TO BACKEND, NOT RELATED TO APP */
   $http({
@@ -14,25 +14,31 @@ angular.module('planscape').controller('CreateRouteController', function($state,
 
 this.states = CreateRouteService.states;
 
-this.routes = [];
+this.routes = CreateRouteService.get();
 
-this.formFieldsets = [{location: {}},{location:{}}];
+this.formFieldsets = [ {route:null}, {route:null} ];
 
 this.addFieldset = function() {
-  var newFieldset = {location: {}};
-  var currentFieldsets = this.fieldsets;
+  var newFieldset = {route:null};
+  var currentFieldsets = this.formFieldsets;
   if (currentFieldsets.length < 4) {
     this.formFieldsets.push(newFieldset);
   }
 };
 
-this.generate = function() {
-  console.log(this.formFieldsets);
+this.createRoute = function() {
+  var locationsArray = this.formFieldsets;
+  var routeID = Date.now();
+  var newRoute = [];
+  locationsArray.forEach(function(location){
+    location.route = routeID;
+    newRoute.push(location);
+  });
+  console.log(newRoute);
+  this.routes.push(newRoute);
+  CreateRouteService.set(this.routes);
   $state.go('main.route');
 };
-
-
-
 
 
 
