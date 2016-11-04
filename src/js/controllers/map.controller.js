@@ -1,4 +1,4 @@
-angular.module('planscape').controller('MapController', function CreateRouteCtrl($scope) {
+angular.module('planscape').controller('MapController', function MapCtrl($scope) {
     $scope.map = {
         control: {},
         zoom: 14,
