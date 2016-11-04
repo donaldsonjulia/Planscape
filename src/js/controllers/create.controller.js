@@ -2,6 +2,8 @@ angular.module('planscape').controller('CreateRouteController', function CreateR
 
 
 
+
+
 this.states = RouteService.states;
 
 this.formFieldsets = [ {route:null}, {route:null} ];
@@ -13,7 +15,6 @@ this.addFieldset = function() {
     this.formFieldsets.push(newFieldset);
   }
 };
-
 
 
 

@@ -18,7 +18,7 @@ angular.module('planscape', ['ui.router', 'LocalStorageModule', 'google-maps']).
   }).state('main.routes', {
     url: 'routes',
     templateUrl: './src/templates/routes.html',
-    controller: 'CreateRouteController as create'
+    controller: 'RoutesController as routes'
   }).state('main.map', {
     url: 'map',
     templateUrl: './src/templates/map.html',

@@ -1,4 +1,4 @@
-angular.module('planscape').service('RouteService', function($http, localStorageService) {
+angular.module('planscape').service('RouteService', function($q, $http, localStorageService) {
 
 
   /** ******************static variables for form******************** */
@@ -62,7 +62,6 @@ angular.module('planscape').service('RouteService', function($http, localStorage
 
   function getRoutes() {
     return localStorageService.get('Routes') || [];
-    console.log(getAllLocations());
   }
 
   function setRoutes(routes) {
@@ -72,18 +71,36 @@ angular.module('planscape').service('RouteService', function($http, localStorage
 
   /** ******************data api functions******************** */
 
-    function getAllLocations() {
+// this.getAllLocations = function() {
+//         $http({
+//             method: 'GET',
+//             url: 'https://shielded-atoll-99970.herokuapp.com/'
+//         }).then(function successCallback(response) {
+//             console.log(response.data);
+//             return response.data;
+//         }, function errorCallback(response) {
+//             console.log("OH NO! ERROR: " + response);
+//         });
+//
+//     };
 
+function getAllLocations($scope) {
         $http({
             method: 'GET',
             url: 'https://shielded-atoll-99970.herokuapp.com/'
-        }).then(function successCallback(data) {
-            return data;
+        }).then(function successCallback(response) {
+            console.log(response.data);
+            $scope.allLocations = response.data;
         }, function errorCallback(response) {
             console.log("OH NO! ERROR: " + response);
         });
 
     }
+
+
+
+
+
 
 
     function addLocation(locationObj) {

@@ -8,15 +8,31 @@
 <main>
   <div class="route-table-container">
       <section class="table-header">
-        <h3>All Routes</h3>
+        <!-- <h3>All Routes</h3> -->
+        <h3>All Locations</h3>
       </section>
 
-    <table>
+    <!-- <table>
         <tr ng-repeat="route in create.routes">
             <td>Route</td>
             <td>Locations:
                 {{route.length}}</td>
         </tr>
+    </table> -->
+
+    <table>
+        <tr ng-repeat="location in routes.allLocations | orderBy: location.route">
+            <td>{{location.name}}</td>
+            <td>{{location.street}}</td>
+            <td>{{location.city}}</td>
+            <td>{{location.state}}</td>
+            <td>{{location.zip}}</td>
+        </tr>
     </table>
+
+
+
+
+
   </div>
 </main>
