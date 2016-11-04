@@ -1,20 +1,8 @@
-angular.module('planscape').controller('CreateRouteController', function CreateRouteCntrl($state, $http, CreateRouteService, localStorageService){
-
-//* BELOW AJAX TEST FOR CONNECTING TO BACKEND, NOT RELATED TO APP */
-  $http({
-    method: 'GET',
-    url: 'https://shielded-atoll-99970.herokuapp.com/'
-  }).then(function successCallback(data) {
-    console.log(data);
-  }, function errorCallback(data) {
-    console.log(data);
-    });
-
-//* ******************START CONTROLLER HERE******************************* */
+angular.module('planscape').controller('CreateRouteController', function CreateRouteCntrl($state, $http, RouteService, localStorageService){
 
 
 
-this.states = CreateRouteService.states;
+this.states = RouteService.states;
 
 this.formFieldsets = [ {route:null}, {route:null} ];
 
@@ -29,7 +17,7 @@ this.addFieldset = function() {
 
 
 
-this.routes = CreateRouteService.get();
+this.routes = RouteService.get();
 
 this.createRoute = function() {
   var locationsArray = this.formFieldsets;
@@ -40,8 +28,8 @@ this.createRoute = function() {
     newRoute.push(location);
   });
   this.routes.push(newRoute);
-  CreateRouteService.set(this.routes);
-  $state.go('main.route');
+  RouteService.set(this.routes);
+  $state.go('main.routes');
 };
 
 
