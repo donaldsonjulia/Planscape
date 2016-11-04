@@ -21,7 +21,7 @@ angular.module('planscape', ['ui.router', 'LocalStorageModule', 'google-maps']).
   }).state('main.map', {
     url: 'map',
     templateUrl: './src/templates/map.html',
-    controller: 'MapController as map'
+    controller: 'MapController as mapCntrl'
   });
 
 });
