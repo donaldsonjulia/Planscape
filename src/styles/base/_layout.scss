@@ -11,4 +11,10 @@ html {
 html,
 body {
   height: 100%;
+  background-image: url("../../src/images/bgnoise_lg.png");
+}
+
+header {
+  min-height: 8vh;
+  background-color: $header-color;
 }

@@ -1,0 +1,116 @@
+
+main {
+  // display: flex;
+  // justify-content: center;
+}
+
+
+
+
+.create-route-container {
+
+  width: 80%;
+  margin: $base-spacing auto;
+  background-color: $base-background-color;
+  box-shadow: 0px 1px 5px $medium-gray;
+
+  position: relative;
+
+form {
+  padding: $small-spacing;
+  padding-bottom: 10vh;
+  width: 100%;
+
+  legend, label {
+    color: $green;
+  }
+
+  fieldset {
+    border: $base-border;
+    padding: $small-spacing / 2;
+    margin-bottom: $small-spacing;
+  }
+
+  label, input, select {
+    display: inline-block;
+  }
+
+  label {
+    display: none;
+  }
+
+  label[for=state] {
+    display: inline-block;
+  }
+
+    input, select {
+      margin-right: 0.5em;
+    }
+
+    input[name=name] {
+      width: 12em;
+    }
+
+    input[name=address] {
+      width: 16em;
+    }
+
+    input[name=city] {
+      width: 10em;
+    }
+
+    input[name=zip] {
+      width: 5em;
+    }
+
+    select {
+      width: 3em;
+    }
+
+}
+
+button#addLocBtn {
+  background-color: $header-color;
+  margin: $small-spacing;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  &:hover,
+  &:focus {
+    background-color: shade($header-color, 20%);
+    color: #fff;
+  }
+}
+
+button#createRouteBtn {
+  margin: $small-spacing;
+  padding-left: 5em;
+  padding-right: 5em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+}
+
+
+section.form-header {
+  min-height: 5vh;
+  background-color: $header-color;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $small-spacing;
+
+    h3 {
+      margin: 0;
+    }
+
+    input[name=routeName] {
+      margin: 0 1em;
+    }
+
+}
+
+
+}
