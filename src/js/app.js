@@ -18,10 +18,10 @@ angular.module('planscape', ['ui.router', 'LocalStorageModule']).config(function
     url: 'route',
     templateUrl: './src/templates/route.html',
     controller: 'CreateRouteController as create'
-  }).state('main.view', {
-    url: 'view',
-    templateUrl: './src/templates/view.html',
-    controller: 'ViewRouteController as view'
+  }).state('main.map', {
+    url: 'map',
+    templateUrl: './src/templates/map.html',
+    controller: 'MapController as map'
   });
 
 });
