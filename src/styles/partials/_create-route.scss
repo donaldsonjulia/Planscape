@@ -11,29 +11,24 @@ main {
 
   width: 80%;
   margin: $base-spacing auto;
-  box-shadow: 1px 1px 5px $medium-gray;
+  background-color: $base-background-color;
+  box-shadow: 0px 1px 5px $medium-gray;
 
   position: relative;
 
-  button#addLocBtn {
-    margin: $small-spacing;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-
 form {
   padding: $small-spacing;
+  padding-bottom: 10vh;
   width: 100%;
 
-
-
-
+  legend, label {
+    color: $green;
+  }
 
   fieldset {
     border: $base-border;
     padding: $small-spacing / 2;
-    margin-bottom: $base-spacing;
+    margin-bottom: $small-spacing;
   }
 
   label, input, select {
@@ -73,6 +68,30 @@ form {
     }
 
 }
+
+button#addLocBtn {
+  background-color: $header-color;
+  margin: $small-spacing;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  &:hover,
+  &:focus {
+    background-color: shade($header-color, 20%);
+    color: #fff;
+  }
+}
+
+button#createRouteBtn {
+  margin: $small-spacing;
+  padding-left: 5em;
+  padding-right: 5em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+}
+
 
 section.form-header {
   min-height: 5vh;
