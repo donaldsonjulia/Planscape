@@ -1,4 +1,4 @@
-angular.module('planscape', ['ui.router', 'LocalStorageModule']).config(function($stateProvider, $urlRouterProvider) {
+angular.module('planscape', ['ui.router', 'LocalStorageModule', 'google-maps']).config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('create');
 

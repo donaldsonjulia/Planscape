@@ -1,0 +1,76 @@
+<main>
+    <style>
+        #right-panel {
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        #right-panel select,
+        #right-panel input {
+            font-size: 10px;
+        }
+        #right-panel select {
+            width: 100%;
+        }
+        #right-panel i {
+            font-size: 12px;
+        }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #right-panel {
+            margin: 20px;
+            border-width: 2px;
+            width: 20%;
+            height: 400px;
+            float: left;
+            text-align: left;
+            padding-top: 0;
+        }
+        #directionsList {
+            margin-top: 10px;
+            background-color: #FFEE77;
+            padding: 10px;
+        }
+        .angular-google-map-container {
+            height: 400px;
+            width: 90%;
+            z-index: 3;
+            margin: 20px auto 0 auto;
+            box-shadow:0px 4px 6px #333333
+        }
+    </style>
+    <google-map scrollwheel="false" control="map.control" center="map.center" draggable="true" zoom="map.zoom" >
+    </google-map>
+    <div id="right-panel">
+        <div>
+            <b>Start:</b>
+            <select id="start" ng-model="directions.origin">
+      <option value="1250 Ephesus Church Rd, Chapel Hill, NC">Chapel Hill, NC</option>
+      <option value="Boston, MA">Boston, MA</option>
+      <option value="New York, NY">New York, NY</option>
+      <option value="Miami, FL">Miami, FL</option>
+    </select>
+            <br>
+            <b>Waypoints:</b> <br>
+            <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+            <select multiple id="waypoints" ng-click="waypointschange()">
+      <option value="NC, Carrboro">Carrboro, NC</option>
+      <option value="NC, Durham">Durham, NC</option>
+
+    </select>
+            <br>
+            <b>End:</b>
+            <select id="end" ng-model="directions.destination">
+      <option value="University of North Carolina, Chapel Hill, NC">UNC</option>
+    </select>
+            <br>
+            <button ng-click="getDirections()" id="submit">get directions</button>
+        </div>
+        <div id="directionsList" ng-show="directions.showList"></div>
+    </div>
+
+</main>
