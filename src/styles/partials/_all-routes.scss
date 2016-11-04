@@ -1,0 +1,19 @@
+.route-table-container {
+  width: 80%;
+  margin: $base-spacing auto;
+  box-shadow: 1px 1px 5px $medium-gray;
+
+  section.table-header {
+    min-height: 5vh;
+    background-color: $header-color;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $small-spacing;
+
+      h3 {
+        margin: 0;
+      }
+}
+}

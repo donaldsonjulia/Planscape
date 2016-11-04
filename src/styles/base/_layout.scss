@@ -12,3 +12,8 @@ html,
 body {
   height: 100%;
 }
+
+header {
+  min-height: 8vh;
+  background-color: $header-color;
+}

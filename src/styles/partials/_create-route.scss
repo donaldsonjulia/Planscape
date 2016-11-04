@@ -1,7 +1,7 @@
 
 main {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
 }
 
 
@@ -10,15 +10,25 @@ main {
 .create-route-container {
 
   width: 80%;
+  margin: $base-spacing auto;
+  box-shadow: 1px 1px 5px $medium-gray;
 
+  position: relative;
+
+  button#addLocBtn {
+    margin: $small-spacing;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 
 form {
-
-  width: 100%;
   padding: $small-spacing;
-  position: relative;
-  margin: $small-spacing 0;
-  box-shadow: 1px 1px 5px $medium-gray;
+  width: 100%;
+
+
+
+
 
   fieldset {
     border: $base-border;
@@ -64,10 +74,23 @@ form {
 
 }
 
-#addLocBtn {
-  position: absolute;
-  top: $small-spacing;
-  right: $small-spacing;
+section.form-header {
+  min-height: 5vh;
+  background-color: $header-color;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $small-spacing;
+
+    h3 {
+      margin: 0;
+    }
+
+    input[name=routeName] {
+      margin: 0 1em;
+    }
+
 }
 
 
