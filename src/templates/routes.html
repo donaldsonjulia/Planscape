@@ -1,0 +1,22 @@
+<header>
+  <h3 ui-sref="main.create">CREATE.HTML</h3>
+  <h3 ui-sref="main.routes">ROUTE.HTML</h3>
+  <h3 ui-sref="main.map">MAP.HTML</h3>
+  <h3 ui-sref="main.login">LOGIN.HTML</h3>
+</header>
+
+<main>
+  <div class="route-table-container">
+      <section class="table-header">
+        <h3>All Routes</h3>
+      </section>
+
+    <table>
+        <tr ng-repeat="route in create.routes">
+            <td>Route</td>
+            <td>Locations:
+                {{route.length}}</td>
+        </tr>
+    </table>
+  </div>
+</main>

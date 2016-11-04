@@ -1,0 +1,40 @@
+<header>
+  <h3 ui-sref="main.create">CREATE.HTML</h3>
+  <h3 ui-sref="main.routes">ROUTE.HTML</h3>
+  <h3 ui-sref="main.map">MAP.HTML</h3>
+  <h3 ui-sref="main.login">LOGIN.HTML</h3>
+</header>
+
+<main>
+    <div class="create-route-container">
+          <section class="form-header">
+          <h3>Create&nbsp;New&nbsp;Route</h3>
+          <input name="routeName" type="text" placeholder="Route Name">
+        </section>
+          <form name="createRouteForm" ng-submit="create.createRoute()">
+            <fieldset name="location" ng-repeat="fieldset in create.formFieldsets">
+                <legend for="location">Add Location</legend>
+
+                  <label for="name">Name</label>
+                  <input name="name" type="text" placeholder="Location Name" ng-model="fieldset.name">
+
+                  <label for="address">Address</label>
+                  <input name="address" type="text" placeholder="Address" ng-model="fieldset.street">
+
+                  <label for="city">City</label>
+                  <input name="city" type="text" placeholder="City" ng-model="fieldset.city">
+
+                  <label for="state">State</label>
+                  <select name="state" ng-model="fieldset.state">
+                      <option ng-repeat="state in create.states">{{state.abbreviation}}</option>
+                  </select>
+
+                  <label for="zip">Zip</label>
+                  <input name="zip" type="text" placeholder="Zip" ng-model="fieldset.zip">
+
+            </fieldset>
+            <button id="createRouteBtn" type="submit">Create Route</button>
+            </form>
+            <button id="addLocBtn" ng-click="create.addFieldset()">Add Another Location</button>
+    </div>
+</main>
