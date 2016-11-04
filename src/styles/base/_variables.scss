@@ -3,10 +3,7 @@ $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
-
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
-
-$base-font-family: 'PT Sans', sans-serif;
+$base-font-family: sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -23,8 +20,6 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$green: #779D83;
-$pale-moss: #AFD0AC;
 $blue: #1565c0;
 $dark-gray: #333;
 $medium-gray: #999;
@@ -32,7 +27,7 @@ $light-gray: #ddd;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $green;
+$action-color: $blue;
 
 // Border
 $base-border-color: $light-gray;
@@ -41,7 +36,6 @@ $base-border: 1px solid $base-border-color;
 // Background Colors
 $base-background-color: #fff;
 $secondary-background-color: tint($base-border-color, 75%);
-$header-color: $pale-moss;
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
