@@ -1,8 +1,6 @@
 angular.module('planscape', ['ui.router', 'LocalStorageModule', 'google-maps']).config(function($stateProvider, $urlRouterProvider) {
 
-<<<<<<< HEAD
-    $urlRouterProvider.otherwise('create');
-=======
+
   $urlRouterProvider.otherwise('create');
 
   $stateProvider.state('main', {
@@ -26,23 +24,5 @@ angular.module('planscape', ['ui.router', 'LocalStorageModule', 'google-maps']).
     templateUrl: './src/templates/map.html',
     controller: 'MapController as mapCntrl'
   });
->>>>>>> 49104059a66d994dabeeb0c3feb8a0d4a139f069
 
-    $stateProvider.state('main', {
-        url: '/',
-        abstract: true,
-        template: '<ui-view></ui-view>'
-    }).state('main.login', {
-        url: 'login',
-        templateUrl: './src/templates/login.html',
-        controller: 'LoginController as login'
-    }).state('main.create', {
-        url: 'create',
-        templateUrl: './src/templates/create.html',
-        controller: 'CreateRouteController as create'
-    }).state('main.map', {
-        url: 'map',
-        templateUrl: './src/templates/map.html',
-        controller: 'MapController as mapCtrl'
-    });
 });

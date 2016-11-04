@@ -1,4 +1,4 @@
-angular.module('planscape').controller('CreateRouteController', CreateRouteCntrl($state, $http, CreateRouteService, localStorageService) {
+angular.module('planscape').controller('CreateRouteController', function CreateRouteCntrl($state, $http, CreateRouteService, localStorageService){
 
 //* BELOW AJAX TEST FOR CONNECTING TO BACKEND, NOT RELATED TO APP */
   $http({
