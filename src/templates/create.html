@@ -9,7 +9,7 @@
     <div class="create-route-container">
           <section class="form-header">
           <h3>Create&nbsp;New&nbsp;Route</h3>
-          <input name="routeName" type="text" placeholder="Route Name">
+          <input name="routeName" type="text" placeholder="Route Name" ng-model="create.crew">
         </section>
           <form name="createRouteForm" ng-submit="create.createRoute()">
             <fieldset name="location" ng-repeat="fieldset in create.formFieldsets">

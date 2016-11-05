@@ -17,19 +17,24 @@ this.addFieldset = function() {
 };
 
 
+this.crew = '';
 
-this.routes = RouteService.get();
 
 this.createRoute = function() {
   var locationsArray = this.formFieldsets;
   var routeID = Date.now();
+  var crew = this.crew;
   var newRoute = [];
   locationsArray.forEach(function(location){
     location.route = routeID;
+    location.crew = crew;
     newRoute.push(location);
   });
-  this.routes.push(newRoute);
-  RouteService.set(this.routes);
+  newRoute.forEach(function(location) {
+    RouteService.addLocation(location);
+    console.log(location);
+  });
+
   $state.go('main.routes');
 };
 

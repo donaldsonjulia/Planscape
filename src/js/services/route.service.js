@@ -60,29 +60,20 @@ angular.module('planscape').service('RouteService', function($q, $http, localSto
 
   /** ******************local storage functions******************** */
 
-  function getRoutes() {
-    return localStorageService.get('Routes') || [];
-  }
+  // function getRoutes() {
+  //   return localStorageService.get('Routes') || [];
+  // }
+  //
+  // function setRoutes(routes) {
+  //   localStorageService.set('Routes', routes);
+  // }
 
-  function setRoutes(routes) {
-    localStorageService.set('Routes', routes);
-  }
+
+
+
 
 
   /** ******************data api functions******************** */
-
-// this.getAllLocations = function() {
-//         $http({
-//             method: 'GET',
-//             url: 'https://shielded-atoll-99970.herokuapp.com/'
-//         }).then(function successCallback(response) {
-//             console.log(response.data);
-//             return response.data;
-//         }, function errorCallback(response) {
-//             console.log("OH NO! ERROR: " + response);
-//         });
-//
-//     };
 
 function getAllLocations($scope) {
         $http({
@@ -98,23 +89,31 @@ function getAllLocations($scope) {
     }
 
 
+function getAllRoutes() {
+  $http({
+      method: 'GET',
+      url: 'https://shielded-atoll-99970.herokuapp.com/show'
+  }).then(function successCallback(response) {
+      console.log(response.data);
+  }, function errorCallback(response) {
+      console.log("OH NO! ERROR: " + response);
+  });
+
+}
 
 
+function addLocation(locationObj) {
 
-
-
-    function addLocation(locationObj) {
-
-        $http({
-            method: 'POST',
-            url: 'https://shielded-atoll-99970.herokuapp.com/',
-            data: locationObj
-        }).then(function successCallback(response) {
-            console.log(response);
-        }, function errorCallback(response) {
-            console.log("OH NO! UNABLE TO ADD TO DB: " + response);
-        });
-    }
+    $http({
+        method: 'POST',
+        url: 'https://shielded-atoll-99970.herokuapp.com/',
+        data: locationObj
+    }).then(function successCallback(response) {
+        console.log(response);
+    }, function errorCallback(response) {
+        console.log("OH NO! UNABLE TO ADD TO DB: " + response);
+    });
+}
 
 
 
@@ -125,10 +124,11 @@ return {
 
       states: usStates,
       getLocations: getAllLocations,
+      getRoutes: getAllRoutes,
       addLocation: addLocation,
 
-      get: getRoutes,
-      set: setRoutes
+      // get: getRoutes,
+      // set: setRoutes
 
 };
 
