@@ -58,24 +58,12 @@ angular.module('planscape').service('RouteService', function($q, $http, localSto
   ];
 
 
-  /** ******************local storage functions******************** */
-
-  // function getRoutes() {
-  //   return localStorageService.get('Routes') || [];
-  // }
-  //
-  // function setRoutes(routes) {
-  //   localStorageService.set('Routes', routes);
-  // }
-
-
-
-
-
 
   /** ******************data api functions******************** */
 
-function getAllLocations($scope) {
+
+
+function getAllLocations($scope, $state) {
         $http({
             method: 'GET',
             url: 'https://shielded-atoll-99970.herokuapp.com/'
@@ -117,6 +105,36 @@ function addLocation(locationObj) {
 
 
 
+//
+// function findLocation(location, $scope) {
+//
+//   var found = {};
+//   var all = getAllLocations($scope);
+//   all.forEach(function(item){
+//   if (item.id === location.id) {
+//     found = location;
+//   }
+//   return found;
+//   });
+
+// }
+
+function deleteLocation(location, $state) {
+
+  $http({
+      method: 'DELETE',
+      url: 'https://shielded-atoll-99970.herokuapp.com/location/' + location.id
+  }).then(function successCallback() {
+      console.log('LOCATION DELETED!');
+      $state.reload();
+  }, function errorCallback(response) {
+      console.log("OH NO! UNABLE TO DELETE LOCATION");
+  });
+
+}
+
+
+
 
   /** ******************SERVICE RETURNS THIS OBJECT******************** */
 
@@ -125,10 +143,9 @@ return {
       states: usStates,
       getLocations: getAllLocations,
       getRoutes: getAllRoutes,
-      addLocation: addLocation,
+      add: addLocation,
+      delete: deleteLocation
 
-      // get: getRoutes,
-      // set: setRoutes
 
 };
 

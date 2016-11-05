@@ -17,4 +17,24 @@
         margin: 0;
       }
 }
+
+
+
+
+td {
+  .x-btn {
+    font-size: .8em;
+    color: $header-color;
+
+        &:hover {
+          cursor: default;
+          color: $action-color;
+        }
+}
+}
+
+td:last-child {
+  text-align: right;
+}
+
 }

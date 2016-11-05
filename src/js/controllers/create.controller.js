@@ -37,10 +37,11 @@ this.createRoute = function() {
     newRoute.push(location);
   });
   newRoute.forEach(function(location) {
-    RouteService.addLocation(location);
+    RouteService.add(location);
   });
 
   $state.go('main.routes');
+
 };
 
 
