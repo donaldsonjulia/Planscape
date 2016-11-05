@@ -3,22 +3,28 @@ angular.module('planscape').controller('CreateRouteController', function CreateR
 
 
 
-
 this.states = RouteService.states;
 
-this.formFieldsets = [ {route:null}, {route:null} ];
+this.formFieldsets = [ {route:null}, {route:null}, {route:null} ];
 
 this.addFieldset = function() {
   var newFieldset = {route:null};
   var currentFieldsets = this.formFieldsets;
-  if (currentFieldsets.length < 4) {
+  if (currentFieldsets.length < 6) {
     this.formFieldsets.push(newFieldset);
+  }
+};
+
+this.removeFieldset = function(fieldset) {
+  // var currentFieldsets = this.formFieldsets;
+  var index = this.formFieldsets.indexOf(fieldset);
+  if(index >= 0 && this.formFieldsets.length > 3) {
+  	this.formFieldsets.splice(index, 1);
   }
 };
 
 
 this.crew = '';
-
 
 this.createRoute = function() {
   var locationsArray = this.formFieldsets;
@@ -32,7 +38,6 @@ this.createRoute = function() {
   });
   newRoute.forEach(function(location) {
     RouteService.addLocation(location);
-    console.log(location);
   });
 
   $state.go('main.routes');

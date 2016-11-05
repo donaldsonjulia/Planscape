@@ -17,12 +17,14 @@ body {
 header {
   min-height: 8vh;
   background-color: $header-color;
+
     h3 {
       color: #fff;
       display: inline-block;
       margin:$small-spacing;
       &:hover {
-        color: black;
+        cursor: default;
+        color: $action-color;
       }
     }
 }
