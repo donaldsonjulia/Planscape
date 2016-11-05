@@ -1,41 +1,38 @@
 <header>
-  <h3 ui-sref="main.create">CREATE.HTML</h3>
-  <h3 ui-sref="main.routes">ROUTE.HTML</h3>
-  <h3 ui-sref="main.map">MAP.HTML</h3>
-  <h3 ui-sref="main.login">LOGIN.HTML</h3>
+    <h3 ui-sref="main.create">CREATE.HTML</h3>
+    <h3 ui-sref="main.routes">ROUTE.HTML</h3>
+    <h3 ui-sref="main.map">MAP.HTML</h3>
+    <h3 ui-sref="main.login">LOGIN.HTML</h3>
 </header>
 
 <main>
-<div class="map-content-container">
-    <google-map scrollwheel="false" control="map.control" center="map.center" draggable="true" zoom="map.zoom">
-    </google-map>
-    <div id="right-panel">
-        <div>
-            <b>Start:</b>
-            <select id="start" ng-model="directions.origin">
-      <option value="1250 Ephesus Church Rd, Chapel Hill, NC">Chapel Hill, NC</option>
-      <option value="Boston, MA">Boston, MA</option>
-      <option value="New York, NY">New York, NY</option>
-      <option value="Miami, FL">Miami, FL</option>
+    <div class="map-content-container">
+        <google-map scrollwheel="false" control="map.control" center="map.center" draggable="true" zoom="map.zoom">
+        </google-map>
+        <div id="right-panel">
+            <div>
+                <b>Start:</b>
+                <select id="start" ng-model="directions.origin">
+      <option value="Chapel Hill">Chapel Hill, NC</option>
+      <!-- make option value="" the same as the html contained??? -->
     </select>
-            <br>
-            <b>Waypoints:</b> <br>
-            <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-            <select multiple id="waypoints" ng-click="waypointschange()">
-      <option value="NC, Carrboro">Carrboro, NC</option>
-      <option value="NC, Durham">Durham, NC</option>
+                <br>
+                <b>Waypoints:</b> <br>
+                <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+                <select multiple id="waypoints" ng-click="waypointschange()">
+      <option class="waypointVal" value="">{{ wayP }}</option>
 
     </select>
-            <br>
-            <b>End:</b>
-            <select id="end" ng-model="directions.destination">
+                <br>
+                <b>End:</b>
+                <select id="end" ng-model="directions.destination">
       <option value="University of North Carolina, Chapel Hill, NC">UNC</option>
     </select>
-            <br>
-            <button ng-click="getDirections()" id="submit">get directions</button>
+                <br>
+                <button ng-click="getDirections()" id="submit">get directions</button>
+            </div>
+            <div id="directionsList" ng-show="directions.showList"></div>
         </div>
-        <div id="directionsList" ng-show="directions.showList"></div>
     </div>
-  </div>
 
 </main>
