@@ -15,21 +15,21 @@ angular.module('planscape')
     ///////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////
     // add function for sending object and setting value="address n stuff"
-    // var firstObj = {
-    //   city: "Greensboro",
-    //   created_at: "2016-11-04T20:04:10.839z",
-    //   id: 17,
-    //   name: "P-Units",
-    //   route: "A",
-    //   state: "NC",
-    //   street: "2301, Erwin Rd",
-    //   updated_at: "2016-11-04T20:04:10.839z",
-    //   zip: 22705
-    // };
-    // $scope.wayP = firstObj.city + ", " + firstObj.state;
-    // // console.log($scope.wayP);
-    // // set the value on the corresponding html tag
-    // $( ".waypointVal" ).attr( "value", $scope.wayP );
+    var firstObj = {
+      city: "Greensboro",
+      created_at: "2016-11-04T20:04:10.839z",
+      id: 17,
+      name: "P-Units",
+      route: "A",
+      state: "NC",
+      street: "2301, Erwin Rd",
+      updated_at: "2016-11-04T20:04:10.839z",
+      zip: 22705
+    };
+    $scope.wayP = firstObj.city + ", " + firstObj.state;
+    // console.log($scope.wayP);
+    // set the value on the corresponding html tag
+    $( ".waypointVal" ).attr( "value", $scope.wayP );
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
     $scope.directions = {
