@@ -6,24 +6,10 @@
 </header>
 
 <main>
-  <div class="route-table-container">
-      <section class="table-header">
-        <h3>All Routes</h3>
-      </section>
-
-    <table>
-        <tr ng-repeat="route in routes.allRoutes">
-            <td>{{route[0].crew}}</td>
-            <td>Locations: {{route.length}}</td>
-            <td><span class="more-btn" ui-sref="main.detail({ route: route[0].route})"><i class="material-icons">more_horiz</i></span></td>
-        </tr>
-    </table>
-  </div>
 
   <div class="locations-table-container">
 
     <section class="table-header">
-      <!-- <h3>All Routes</h3> -->
       <h3>All Locations</h3>
     </section>
 

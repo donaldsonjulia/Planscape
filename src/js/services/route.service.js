@@ -71,20 +71,21 @@ function getAllLocations($scope, $state) {
             console.log(response.data);
             $scope.allLocations = response.data;
         }, function errorCallback(response) {
-            console.log("OH NO! ERROR: " + response);
+            console.log(response);
         });
 
     }
 
 
-function getAllRoutes() {
+function getAllRoutes($scope) {
   $http({
       method: 'GET',
       url: 'https://shielded-atoll-99970.herokuapp.com/show'
   }).then(function successCallback(response) {
       console.log(response.data);
+      $scope.allRoutes = response.data;
   }, function errorCallback(response) {
-      console.log("OH NO! ERROR: " + response);
+      console.log(response);
   });
 
 }
@@ -99,7 +100,7 @@ function addLocation(locationObj) {
     }).then(function successCallback(response) {
         console.log(response);
     }, function errorCallback(response) {
-        console.log("OH NO! UNABLE TO ADD TO DB: " + response);
+        console.log(response);
     });
 }
 
@@ -128,7 +129,7 @@ function deleteLocation(location, $state) {
       console.log('LOCATION DELETED!');
       $state.reload();
   }, function errorCallback(response) {
-      console.log("OH NO! UNABLE TO DELETE LOCATION");
+      console.log(response);
   });
 
 }

@@ -1,4 +1,4 @@
-.route-table-container {
+.route-table-container, .locations-table-container {
   width: 80%;
   margin: $base-spacing auto;
   background-color: $base-background-color;
@@ -22,7 +22,7 @@
 
 
 td {
-  .x-btn {
+  .x-btn, .more-btn {
     font-size: .8em;
     color: $header-color;
 
