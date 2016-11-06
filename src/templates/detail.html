@@ -14,7 +14,7 @@
     </section>
 
     <table>
-        <tr ng-repeat="location in routes.allLocations | orderBy: location.route">
+        <tr ng-repeat="location in detail.currentRoute">
             <td class="name-td">{{location.name}}</td>
             <td class="address-td">{{location.street}}</td>
             <td>{{location.city}}</td>

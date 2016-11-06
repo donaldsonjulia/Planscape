@@ -1,5 +1,4 @@
-angular.module('planscape').controller('DetailController', function DetailCntrl() {
-
+angular.module('planscape').controller('DetailController', function DetailCntrl(RouteService, $state) {
 
 
 

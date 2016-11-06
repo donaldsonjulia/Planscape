@@ -63,17 +63,15 @@ angular.module('planscape').service('RouteService', function($q, $http, localSto
 
 
 
-function getAllLocations($scope, $state) {
+function getAllLocations($scope) {
         $http({
             method: 'GET',
             url: 'https://shielded-atoll-99970.herokuapp.com/'
         }).then(function successCallback(response) {
-            console.log(response.data);
             $scope.allLocations = response.data;
         }, function errorCallback(response) {
             console.log(response);
         });
-
     }
 
 
@@ -82,7 +80,6 @@ function getAllRoutes($scope) {
       method: 'GET',
       url: 'https://shielded-atoll-99970.herokuapp.com/show'
   }).then(function successCallback(response) {
-      console.log(response.data);
       $scope.allRoutes = response.data;
   }, function errorCallback(response) {
       console.log(response);
@@ -106,7 +103,7 @@ function addLocation(locationObj) {
 
 
 
-//
+
 // function findLocation(location, $scope) {
 //
 //   var found = {};
@@ -117,8 +114,23 @@ function addLocation(locationObj) {
 //   }
 //   return found;
 //   });
-
+//
 // }
+
+function findRoute(route, $scope) {
+
+  var foundRoute = [];
+  var allRoutes = getAllRoutes($scope);
+  for (var index in allRoutes) {
+  if (index === route) {
+    foundRoute = route;
+  }
+  return foundRoute;
+  }
+
+}
+
+
 
 function deleteLocation(location, $state) {
 
@@ -145,7 +157,8 @@ return {
       getLocations: getAllLocations,
       getRoutes: getAllRoutes,
       add: addLocation,
-      delete: deleteLocation
+      delete: deleteLocation,
+      find: findRoute
 
 
 };

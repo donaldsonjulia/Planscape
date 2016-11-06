@@ -15,7 +15,7 @@
         <tr ng-repeat="route in routes.allRoutes">
             <td>{{route[0].crew}}</td>
             <td>Locations: {{route.length}}</td>
-            <td><span class="more-btn" ui-sref="main.detail({ route: route[0].route})"><i class="material-icons">more_horiz</i></span></td>
+            <td><span class="more-btn" ui-sref="main.detail({ route: route[0].route})" ng-click="route.currentRoute(route)"><i class="material-icons">more_horiz</i></span></td>
         </tr>
     </table>
   </div>
