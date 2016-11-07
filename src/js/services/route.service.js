@@ -146,7 +146,7 @@ function deleteLocation(location, $state) {
 
 }
 
-
+this.currentRoute = [];
 
 
   /** ******************SERVICE RETURNS THIS OBJECT******************** */
