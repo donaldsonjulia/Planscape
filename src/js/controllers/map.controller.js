@@ -1,5 +1,5 @@
 angular.module('planscape')
-    .controller('MapController', function MapCtrl($scope) {
+    .controller('MapController', function MapCtrl($scope, RouteService, localStorageService) {
         $scope.map = {
             control: {},
             zoom: 14,
@@ -14,40 +14,43 @@ angular.module('planscape')
         var directionsService = new google.maps.DirectionsService();
         ///////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////
-        $scope.locationsArray = [{
-            "id": 1,
-            "route": "A",
-            "crew": "Blue",
-            "name": "Duke Starbucks",
-            "street": "2301 Erwin Rd",
-            "city": "Durham",
-            "state": "NC",
-            "zip": 27705,
-            "created_at": "2016-11-05T19:07:57.441Z",
-            "updated_at": "2016-11-05T19:07:57.441Z"
-        }, {
-            "id": 2,
-            "route": "A",
-            "crew": "Blue",
-            "name": "Willowdale Starbucks",
-            "street": "3801 Guess Rd",
-            "city": "Durham",
-            "state": "NC",
-            "zip": 27705,
-            "created_at": "2016-11-05T19:07:57.448Z",
-            "updated_at": "2016-11-05T19:07:57.448Z"
-        }, {
-            "id": 3,
-            "route": "A",
-            "crew": "Blue",
-            "name": "Kroger Starbucks",
-            "street": "3457 Hillsborough Rd",
-            "city": "Durham",
-            "state": "NC",
-            "zip": 27705,
-            "created_at": "2016-11-05T19:07:57.453Z",
-            "updated_at": "2016-11-05T19:07:57.453Z"
-        }];
+        // $scope.locationsArray = [{
+        //     "id": 1,
+        //     "route": "A",
+        //     "crew": "Blue",
+        //     "name": "Duke Starbucks",
+        //     "street": "2301 Erwin Rd",
+        //     "city": "Durham",
+        //     "state": "NC",
+        //     "zip": 27705,
+        //     "created_at": "2016-11-05T19:07:57.441Z",
+        //     "updated_at": "2016-11-05T19:07:57.441Z"
+        // }, {
+        //     "id": 2,
+        //     "route": "A",
+        //     "crew": "Blue",
+        //     "name": "Willowdale Starbucks",
+        //     "street": "3801 Guess Rd",
+        //     "city": "Durham",
+        //     "state": "NC",
+        //     "zip": 27705,
+        //     "created_at": "2016-11-05T19:07:57.448Z",
+        //     "updated_at": "2016-11-05T19:07:57.448Z"
+        // }, {
+        //     "id": 3,
+        //     "route": "A",
+        //     "crew": "Blue",
+        //     "name": "Kroger Starbucks",
+        //     "street": "3457 Hillsborough Rd",
+        //     "city": "Durham",
+        //     "state": "NC",
+        //     "zip": 27705,
+        //     "created_at": "2016-11-05T19:07:57.453Z",
+        //     "updated_at": "2016-11-05T19:07:57.453Z"
+        // }];
+
+        $scope.locationsArray = RouteService.current;
+
         var startPointObj = $scope.locationsArray.shift(); // get first object
         var endPointObj = startPointObj; // give endpoint same object used in start point
         var beginAndEndValue = startPointObj.street + ", " + startPointObj.city + ", " + startPointObj.state; // concatenate key values to look like a readable address

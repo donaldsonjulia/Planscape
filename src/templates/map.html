@@ -8,7 +8,7 @@
               <div class="startDropDown"
                 <b>Start:</b>
                 <select id="start" ng-model="directions.origin">
-      <option class="startPointValue" value="">{{ startPoint }}</option>
+      <option class="startPointValue">{{ startPoint }}</option>
     </select>
   </div>
   <div class="wayDropDown">
@@ -17,14 +17,14 @@
                 <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
                 <!-- <input type="checkbox" id="checkAll"/> Check all</input> -->
                 <select multiple id="waypoints" ng-click="waypointschange()">
-      <option class="wayPointValue" ng-repeat="location in locationsArray">{{location.street}}</option>
+      <option class="wayPointValue" ng-repeat="location in locationsArray" selected="true">{{location.street}}</option>
     </select>
   </div>
   <div class="endDropDown">
                 <br>
                 <b>End:</b>
                 <select id="end" ng-model="directions.destination">
-      <option class="endPointValue" value="">{{ endPoint }}</option>
+      <option class="endPointValue">{{ endPoint }}</option>
     </select>
   </div>
                 <br>
