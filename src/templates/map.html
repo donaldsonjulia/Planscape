@@ -6,28 +6,33 @@
 </header>
 
 <main>
-    <div class="map-content-container">
+    <div id="map-content-container">
         <google-map scrollwheel="false" control="map.control" center="map.center" draggable="true" zoom="map.zoom">
         </google-map>
-        <div id="right-panel">
-            <div>
+        <div>
+            <div class="dropDownContainer">
+              <div class="startDropDown"
                 <b>Start:</b>
                 <select id="start" ng-model="directions.origin">
-      <option value="Chapel Hill">Chapel Hill, NC</option>
-      <!-- make option value="" the same as the html contained??? -->
+      <option class="startPointValue" value="">{{ startPoint }}</option>
     </select>
+  </div>
+  <div class="wayDropDown">
                 <br>
                 <b>Waypoints:</b> <br>
                 <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+                <!-- <input type="checkbox" id="checkAll"/> Check all</input> -->
                 <select multiple id="waypoints" ng-click="waypointschange()">
-      <option class="waypointVal" value="">{{ wayP }}</option>
-
+      <option class="wayPointValue" ng-repeat="location in locationsArray">{{location.street}}</option>
     </select>
+  </div>
+  <div class="endDropDown">
                 <br>
                 <b>End:</b>
                 <select id="end" ng-model="directions.destination">
-      <option value="University of North Carolina, Chapel Hill, NC">UNC</option>
+      <option class="endPointValue" value="">{{ endPoint }}</option>
     </select>
+  </div>
                 <br>
                 <button ng-click="getDirections()" id="submit">get directions</button>
             </div>

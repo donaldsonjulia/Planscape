@@ -1,28 +1,35 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
-  box-sizing: inherit;
+*::after,
+*::before {
+    box-sizing: inherit;
 }
 
-html,
-body {
-  height: 100%;
-  background-image: url("../../src/images/bgnoise_lg.png");
+body,
+html {
+    height: 100%;
+    background-image: url("../../src/images/bgnoise_lg.png");
 }
 
 header {
-  min-height: 8vh;
-  background-color: $header-color;
+    min-height: 8vh;
+    background-color: $header-color;
+
     h3 {
-      color: #fff;
-      display: inline-block;
-      margin:$small-spacing;
-      &:hover {
-        color: black;
-      }
+        color: #fff;
+        display: inline-block;
+        margin: $small-spacing;
+
+        &:hover {
+            color: black;
+        }
+    }
+    .ng-scope {
+      content: url("PlanScapeLogo.svgz");
+      height:40px;
+      z-index: 3;
     }
 }
