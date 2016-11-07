@@ -1,46 +1,41 @@
-.map-content-container {
-    #right-panel {
-        font-family: 'Roboto', 'sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
+.angular-google-map-container {
+    height: 400px;
+    width: 90%;
+    z-index: 3;
+    margin: 20px auto 0;
+    box-shadow: 0 4px 6px #333;
+}
+
+.dropDownContainer {
+    width: 90%;
+    background: #afd0ac;
+    margin: 3% auto 0;
+    text-align: center;
+
+    .startDropDown {
+        padding: 0 20px;
     }
 
-    #right-panel select,
-    #right-panel input {
-        font-size: 10px;
+    .wayDropDown {
+        padding: 0 20px;
     }
 
-
-    #right-panel select {
-        width: 100%;
+    .endDropDown {
+        padding: 0 20px;
     }
 
-    #right-panel i {
-        font-size: 12px;
+    button#submit {
+        margin-bottom: 15px;
     }
+}
 
-    #right-panel {
-        margin: 20px;
-        border-width: 2px;
-        width: 20%;
-        height: 400px;
-        float: left;
-        text-align: left;
-        padding-top: 0;
-    }
+div.adp {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+}
 
-    #directionsList {
-        margin-top: 10px;
-        background-color: #FFEE77;
-        padding: 10px;
-    }
-
-    .angular-google-map-container {
-        height: 400px;
-        width: 90%;
-        z-index: 3;
-        margin: 20px auto 0 auto;
-        box-shadow:0px 4px 6px #333333
-    }
-
-  }
+td.adp-text {
+  text-align: center;
+  font-weight: 700;
+}
