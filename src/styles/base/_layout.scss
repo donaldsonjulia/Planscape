@@ -1,42 +1,43 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
-*::before,
-*::after {
-  box-sizing: inherit;
+*::after,
+*::before {
+    box-sizing: inherit;
 }
 
-html,
-body {
-  height: 100%;
-  background-image: url("../../src/images/bgnoise_lg.png");
+body,
+html {
+    height: 100%;
+    background-image: url("../../src/images/bgnoise_lg.png");
 }
 
 header {
-  min-height: 8vh;
-  background-color: $header-color;
+    min-height: 8vh;
+    background-color: $header-color;
 
     h3 {
-      color: #fff;
-      display: inline-block;
-      margin:$small-spacing;
-      &:hover {
-        cursor: default;
-        color: $action-color;
-      }
+        color: #fff;
+        display: inline-block;
+        margin: $small-spacing;
+
+        &:hover {
+            cursor: default;
+            color: $action-color;
+        }
     }
 
     .title-logo {
-      display: inline-block;
-      color: #fff;
+        display: inline-block;
+        color: #fff;
 
         img {
-          width: 100px;
-
+            width: 140px;
+            position: relative;
+            top: 8px;
+            left: 12px;
         }
-
     }
-
-  }
+}
