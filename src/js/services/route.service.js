@@ -146,8 +146,7 @@ function deleteLocation(location, $state) {
 
 }
 
-this.currentRoute = [];
-
+this.currentRoute = localStorageService.get('currentRoute') || [];
 
   /** ******************SERVICE RETURNS THIS OBJECT******************** */
 
@@ -158,7 +157,8 @@ return {
       getRoutes: getAllRoutes,
       add: addLocation,
       delete: deleteLocation,
-      find: findRoute
+      find: findRoute,
+      current: this.currentRoute
 
 
 };

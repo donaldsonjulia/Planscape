@@ -18,12 +18,11 @@ this.delete = function(location) {
 
 
 
-this.currentRoute = RouteService.currentRoute;
+this.currentRoute = RouteService.current;
 
 this.setCurrentRoute = function(route) {
-
-  RouteService.currentRoute = route;
-  console.log(route);
+  RouteService.current = route;
+  localStorageService.set('currentRoute', route);
 };
 
 
