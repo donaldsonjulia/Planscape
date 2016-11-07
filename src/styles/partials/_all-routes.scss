@@ -4,6 +4,11 @@
   background-color: $base-background-color;
   box-shadow: 0px 1px 5px $medium-gray;
 
+    // i {
+    //   font-size: 1em;
+    // }
+
+
   section.table-header {
     min-height: 5vh;
     background-color: $header-color;
@@ -18,12 +23,27 @@
       }
 }
 
+section.table-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $small-spacing;
+      i {
+        font-size: 1.1em;
+        margin-left: .5em;
+      }
+      button {
+        margin-left: $base-spacing;
+        margin-right: $base-spacing;
+      }
+}
+
 
 
 
 td {
-  .x-btn, .more-btn {
-    font-size: .8em;
+  .x-btn, .more-btn, i {
+
     color: $header-color;
 
         &:hover {

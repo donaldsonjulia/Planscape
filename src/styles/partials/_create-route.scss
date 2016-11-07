@@ -8,6 +8,7 @@ main {
 .create-route-container {
 
   width: 80%;
+  max-width: 875px;
   margin: $base-spacing auto;
   background-color: $base-background-color;
   box-shadow: 0px 1px 5px $medium-gray;
