@@ -27,4 +27,13 @@ header {
         color: $action-color;
       }
     }
-}
+
+    .title-logo {
+      display: inline-block;
+      color: #fff;
+        h1 {
+          margin: $small-spacing;
+        }
+    }
+
+  }
