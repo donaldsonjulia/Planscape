@@ -104,19 +104,6 @@ function addLocation(locationObj) {
 
 
 
-// function findLocation(location, $scope) {
-//
-//   var found = {};
-//   var all = getAllLocations($scope);
-//   all.forEach(function(item){
-//   if (item.id === location.id) {
-//     found = location;
-//   }
-//   return found;
-//   });
-//
-// }
-
 function findRoute(route, $scope) {
 
   var foundRoute = [];

@@ -38,11 +38,15 @@ section.table-footer {
       }
 }
 
-
+tr {
+  &:hover {
+    background-color: $celery;
+  }
+}
 
 
 td {
-  .x-btn, .more-btn, i {
+   i {
 
     color: $header-color;
 
@@ -50,6 +54,10 @@ td {
           cursor: default;
           color: $action-color;
         }
+}
+
+.x-btn {
+  display: none;
 }
 }
 

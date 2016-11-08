@@ -1,15 +1,15 @@
 
-<main>
+<main ng-cloak>
   <div class="route-table-container">
       <section class="table-header">
         <h3>All Routes</h3>
       </section>
 
     <table>
-        <tr ng-repeat="route in routes.allRoutes">
+        <tr ng-repeat="route in routes.allRoutes" ui-sref="main.detail({ route: route[0].route})" ng-click="routes.setCurrentRoute(route)">
             <td>{{route[0].crew}}</td>
             <td>Locations: {{route.length}}</td>
-            <td><span class="more-btn" ui-sref="main.detail({ route: route[0].route})" ng-click="routes.setCurrentRoute(route)"><i class="material-icons">more_horiz</i></span></td>
+            <td><span class="more-btn"><i class="material-icons">more_horiz</i></span></td>
         </tr>
     </table>
   </div>
