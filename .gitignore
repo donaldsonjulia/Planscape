@@ -1,8 +1,6 @@
-.DS_Store
-*.map
-
-node_modules
-bower_components
+*.DS_Store
 
 .sass-cache/
 *.css.map
+
+node_modules
