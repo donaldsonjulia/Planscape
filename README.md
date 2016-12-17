@@ -14,6 +14,8 @@
 
 [View this assignment on GitHub Pages](https://donaldsonjulia.github.io/TIY-Planscape/)
 
+[View the backend repository for this project](https://github.com/jennt/travel-api)
+
 #### Languages/Tools
 * AngularJS v1.5.8
 * JavaScript
